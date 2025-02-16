@@ -1,10 +1,12 @@
 
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Calendar, BookOpen } from "lucide-react";
+import { Calendar, BookOpen, UserCircle2 } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
 
 const CaterNav = () => {
   const location = useLocation();
+  const { user } = useAuth();
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -38,6 +40,19 @@ const CaterNav = () => {
               <BookOpen className="w-5 h-5" />
               <span>Book an Event</span>
             </Link>
+            {user && (
+              <Link
+                to="/profile"
+                className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 ${
+                  isActive("/profile")
+                    ? "bg-primary text-primary-foreground"
+                    : "hover:bg-muted"
+                }`}
+              >
+                <UserCircle2 className="w-5 h-5" />
+                <span>Profile</span>
+              </Link>
+            )}
           </div>
         </div>
       </div>
