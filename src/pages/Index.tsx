@@ -33,6 +33,14 @@ const Index = () => {
             >
               <Link to="/events">View Calendar</Link>
             </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="secondary"
+              className="animate-fade-up"
+            >
+              <Link to="/auth">Login / Sign Up</Link>
+            </Button>
           </div>
         </div>
       </section>
