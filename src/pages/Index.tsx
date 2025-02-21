@@ -1,9 +1,14 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
-import { Calendar, BookOpen, ChefHat } from "lucide-react";
+import { Calendar, BookOpen, ChefHat, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Index = () => {
   return (
@@ -71,6 +76,58 @@ const Index = () => {
                 Customize your menu to perfectly match your event's needs.
               </p>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <HelpCircle className="w-12 h-12 text-primary mx-auto mb-4" />
+            <h2 className="text-3xl font-semibold mb-4">Frequently Asked Questions</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Find answers to common questions about our catering services
+            </p>
+          </div>
+          
+          <div className="max-w-3xl mx-auto">
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger>How far in advance should I book?</AccordionTrigger>
+                <AccordionContent>
+                  We recommend booking at least 4-6 weeks in advance for most events, and 3-6 months ahead for weddings or large corporate events to ensure availability and allow adequate planning time.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-2">
+                <AccordionTrigger>What is your minimum guest count?</AccordionTrigger>
+                <AccordionContent>
+                  Our minimum guest count varies by event type. For most events, we require a minimum of 20 guests. For intimate gatherings, please contact us to discuss your specific needs.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-3">
+                <AccordionTrigger>Do you accommodate dietary restrictions?</AccordionTrigger>
+                <AccordionContent>
+                  Yes, we accommodate various dietary requirements including vegetarian, vegan, gluten-free, and allergy-specific meals. Please inform us of any dietary restrictions during the booking process.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-4">
+                <AccordionTrigger>What is included in your catering service?</AccordionTrigger>
+                <AccordionContent>
+                  Our standard service includes food preparation, delivery, setup, serving staff, cleanup, and all necessary serving equipment. We can customize our service package based on your specific needs.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="item-5">
+                <AccordionTrigger>What is your cancellation policy?</AccordionTrigger>
+                <AccordionContent>
+                  Our cancellation policy varies depending on the event size and timing. Generally, full refunds are available for cancellations made 30+ days before the event, with partial refunds available for earlier notices.
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
           </div>
         </div>
       </section>
