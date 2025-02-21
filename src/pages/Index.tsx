@@ -27,14 +27,13 @@ const Index = () => {
             life.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="animate-fade-up">
+            <Button asChild size="lg">
               <Link to="/book">Book Now</Link>
             </Button>
             <Button
               asChild
               size="lg"
               variant="outline"
-              className="animate-fade-up"
             >
               <Link to="/events">View Calendar</Link>
             </Button>
@@ -42,7 +41,6 @@ const Index = () => {
               asChild
               size="lg"
               variant="secondary"
-              className="animate-fade-up"
             >
               <Link to="/auth">Login / Sign Up</Link>
             </Button>
