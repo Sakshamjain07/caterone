@@ -1,6 +1,9 @@
 
 import React from "react";
 import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { toast } from "sonner";
 import {
   Select,
   SelectContent,
@@ -19,6 +22,20 @@ import { Button } from "@/components/ui/button";
 
 const Book = () => {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
+  const [eventType, setEventType] = React.useState<string>("");
+  const [guestCount, setGuestCount] = React.useState<string>("");
+  const [specialRequests, setSpecialRequests] = React.useState<string>("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!date || !eventType || !guestCount) {
+      toast.error("Please fill in all required fields");
+      return;
+    }
+
+    // Here we would typically send this to a backend
+    toast.success("Booking request submitted successfully! We'll contact you soon.");
+  };
 
   return (
     <div className="container mx-auto px-4 pt-24 pb-12">
@@ -26,33 +43,55 @@ const Book = () => {
         <div className="lg:col-span-2 space-y-8">
           <Card className="p-6">
             <h2 className="text-2xl font-semibold mb-6">Book an Event</h2>
-            <div className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label className="block text-sm font-medium mb-2">
-                  Event Type
-                </label>
-                <Select>
-                  <SelectTrigger>
+                <Label htmlFor="eventType">Event Type</Label>
+                <Select value={eventType} onValueChange={setEventType}>
+                  <SelectTrigger id="eventType">
                     <SelectValue placeholder="Select event type" />
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="wedding">Wedding</SelectItem>
                     <SelectItem value="corporate">Corporate Event</SelectItem>
-                    <SelectItem value="party">Party</SelectItem>
+                    <SelectItem value="birthday">Birthday Party</SelectItem>
                     <SelectItem value="other">Other</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
+
               <div>
-                <label className="block text-sm font-medium mb-2">Date</label>
+                <Label htmlFor="date">Date</Label>
                 <Calendar
                   mode="single"
                   selected={date}
                   onSelect={setDate}
                   className="rounded-md border"
+                  disabled={(date) => date < new Date()}
                 />
               </div>
-            </div>
+
+              <div>
+                <Label htmlFor="guestCount">Number of Guests</Label>
+                <Input
+                  id="guestCount"
+                  type="number"
+                  min="1"
+                  value={guestCount}
+                  onChange={(e) => setGuestCount(e.target.value)}
+                  placeholder="Enter number of guests"
+                />
+              </div>
+
+              <div>
+                <Label htmlFor="specialRequests">Special Requests</Label>
+                <Input
+                  id="specialRequests"
+                  value={specialRequests}
+                  onChange={(e) => setSpecialRequests(e.target.value)}
+                  placeholder="Any dietary restrictions or special requirements?"
+                />
+              </div>
+            </form>
           </Card>
 
           <Card className="p-6">
@@ -62,14 +101,21 @@ const Book = () => {
                 <AccordionTrigger>Menu Selection</AccordionTrigger>
                 <AccordionContent>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
-                    {/* Placeholder for menu items */}
-                    <div className="animate-pulse space-y-4">
-                      {[1, 2, 3, 4].map((i) => (
-                        <div key={i} className="space-y-2">
-                          <div className="h-4 bg-muted rounded w-3/4"></div>
-                          <div className="h-3 bg-muted rounded w-1/2"></div>
-                        </div>
-                      ))}
+                    <div className="space-y-4">
+                      <h4 className="font-medium">Starter Options</h4>
+                      <ul className="list-disc pl-4 space-y-2">
+                        <li>Classic Caesar Salad</li>
+                        <li>Bruschetta</li>
+                        <li>Soup of the Day</li>
+                      </ul>
+                    </div>
+                    <div className="space-y-4">
+                      <h4 className="font-medium">Main Course Options</h4>
+                      <ul className="list-disc pl-4 space-y-2">
+                        <li>Grilled Chicken</li>
+                        <li>Vegetarian Pasta</li>
+                        <li>Beef Tenderloin</li>
+                      </ul>
                     </div>
                   </div>
                 </AccordionContent>
@@ -77,15 +123,39 @@ const Book = () => {
               <AccordionItem value="beverages">
                 <AccordionTrigger>Beverages & Desserts</AccordionTrigger>
                 <AccordionContent>
-                  {/* Placeholder for beverages & desserts */}
-                  <div className="p-4">Coming soon</div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+                    <div className="space-y-4">
+                      <h4 className="font-medium">Beverages</h4>
+                      <ul className="list-disc pl-4 space-y-2">
+                        <li>Soft Drinks</li>
+                        <li>Coffee & Tea</li>
+                        <li>Juice Selection</li>
+                      </ul>
+                    </div>
+                    <div className="space-y-4">
+                      <h4 className="font-medium">Desserts</h4>
+                      <ul className="list-disc pl-4 space-y-2">
+                        <li>Chocolate Cake</li>
+                        <li>Fresh Fruit Tart</li>
+                        <li>Ice Cream Selection</li>
+                      </ul>
+                    </div>
+                  </div>
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="dietary">
                 <AccordionTrigger>Dietary Restrictions</AccordionTrigger>
                 <AccordionContent>
-                  {/* Placeholder for dietary restrictions */}
-                  <div className="p-4">Coming soon</div>
+                  <div className="p-4 space-y-4">
+                    <p>We accommodate the following dietary restrictions:</p>
+                    <ul className="list-disc pl-4 space-y-2">
+                      <li>Vegetarian</li>
+                      <li>Vegan</li>
+                      <li>Gluten-Free</li>
+                      <li>Dairy-Free</li>
+                      <li>Nut-Free</li>
+                    </ul>
+                  </div>
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
@@ -97,7 +167,7 @@ const Book = () => {
           <div className="space-y-4">
             <div className="flex justify-between items-center">
               <span className="text-sm text-gray-600">Event Type</span>
-              <span className="font-medium">Not selected</span>
+              <span className="font-medium">{eventType || "Not selected"}</span>
             </div>
             <div className="flex justify-between items-center">
               <span className="text-sm text-gray-600">Date</span>
@@ -105,13 +175,19 @@ const Book = () => {
                 {date?.toLocaleDateString() || "Not selected"}
               </span>
             </div>
+            <div className="flex justify-between items-center">
+              <span className="text-sm text-gray-600">Guests</span>
+              <span className="font-medium">{guestCount || "Not specified"}</span>
+            </div>
             <div className="border-t border-gray-200 my-4 pt-4">
               <div className="flex justify-between items-center font-semibold">
                 <span>Estimated Total</span>
-                <span>$0.00</span>
+                <span>Request for Quote</span>
               </div>
             </div>
-            <Button className="w-full">Request Quote</Button>
+            <Button onClick={handleSubmit} className="w-full">
+              Submit Booking Request
+            </Button>
           </div>
         </Card>
       </div>
