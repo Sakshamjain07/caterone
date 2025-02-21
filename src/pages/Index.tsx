@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Calendar, BookOpen, ChefHat, HelpCircle } from "lucide-react";
+import { Calendar, BookOpen, ChefHat, HelpCircle, Star, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -9,6 +9,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Index = () => {
   return (
@@ -74,6 +75,154 @@ const Index = () => {
                 Customize your menu to perfectly match your event's needs.
               </p>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Reviews Section */}
+      <section className="py-16 px-4 bg-muted/50">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <Star className="w-12 h-12 text-primary mx-auto mb-4" />
+            <h2 className="text-3xl font-semibold mb-4">What Our Clients Say</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Read about experiences from our satisfied customers
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Tabs defaultValue="weddings" className="w-full">
+              <TabsList className="grid w-full grid-cols-3">
+                <TabsTrigger value="weddings">Weddings</TabsTrigger>
+                <TabsTrigger value="corporate">Corporate</TabsTrigger>
+                <TabsTrigger value="private">Private Events</TabsTrigger>
+              </TabsList>
+              
+              <TabsContent value="weddings" className="space-y-8 mt-8">
+                <div className="grid gap-6 md:grid-cols-2">
+                  <Card className="p-6">
+                    <div className="flex items-center gap-4 mb-4">
+                      <User className="w-10 h-10 text-primary" />
+                      <div>
+                        <h4 className="font-semibold">Sarah & Michael</h4>
+                        <div className="flex text-primary">
+                          <Star className="w-4 h-4 fill-current" />
+                          <Star className="w-4 h-4 fill-current" />
+                          <Star className="w-4 h-4 fill-current" />
+                          <Star className="w-4 h-4 fill-current" />
+                          <Star className="w-4 h-4 fill-current" />
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-gray-600">
+                      "The team went above and beyond for our wedding. The food was exceptional and the service impeccable. Our guests are still talking about it!"
+                    </p>
+                  </Card>
+                  <Card className="p-6">
+                    <div className="flex items-center gap-4 mb-4">
+                      <User className="w-10 h-10 text-primary" />
+                      <div>
+                        <h4 className="font-semibold">Emily & James</h4>
+                        <div className="flex text-primary">
+                          <Star className="w-4 h-4 fill-current" />
+                          <Star className="w-4 h-4 fill-current" />
+                          <Star className="w-4 h-4 fill-current" />
+                          <Star className="w-4 h-4 fill-current" />
+                          <Star className="w-4 h-4 fill-current" />
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-gray-600">
+                      "Perfect execution from start to finish. They took care of everything, allowing us to truly enjoy our special day."
+                    </p>
+                  </Card>
+                </div>
+              </TabsContent>
+
+              <TabsContent value="corporate" className="space-y-8 mt-8">
+                <div className="grid gap-6 md:grid-cols-2">
+                  <Card className="p-6">
+                    <div className="flex items-center gap-4 mb-4">
+                      <User className="w-10 h-10 text-primary" />
+                      <div>
+                        <h4 className="font-semibold">John Smith</h4>
+                        <p className="text-sm text-gray-500">Tech Solutions Inc.</p>
+                        <div className="flex text-primary">
+                          <Star className="w-4 h-4 fill-current" />
+                          <Star className="w-4 h-4 fill-current" />
+                          <Star className="w-4 h-4 fill-current" />
+                          <Star className="w-4 h-4 fill-current" />
+                          <Star className="w-4 h-4 fill-current" />
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-gray-600">
+                      "Professional service for our annual conference. The variety of options and attention to dietary requirements was impressive."
+                    </p>
+                  </Card>
+                  <Card className="p-6">
+                    <div className="flex items-center gap-4 mb-4">
+                      <User className="w-10 h-10 text-primary" />
+                      <div>
+                        <h4 className="font-semibold">Lisa Johnson</h4>
+                        <p className="text-sm text-gray-500">Marketing Director</p>
+                        <div className="flex text-primary">
+                          <Star className="w-4 h-4 fill-current" />
+                          <Star className="w-4 h-4 fill-current" />
+                          <Star className="w-4 h-4 fill-current" />
+                          <Star className="w-4 h-4 fill-current" />
+                          <Star className="w-4 h-4 fill-current" />
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-gray-600">
+                      "Consistently excellent service for our quarterly events. The team is always professional and the food presentation is outstanding."
+                    </p>
+                  </Card>
+                </div>
+              </TabsContent>
+
+              <TabsContent value="private" className="space-y-8 mt-8">
+                <div className="grid gap-6 md:grid-cols-2">
+                  <Card className="p-6">
+                    <div className="flex items-center gap-4 mb-4">
+                      <User className="w-10 h-10 text-primary" />
+                      <div>
+                        <h4 className="font-semibold">Amanda Peters</h4>
+                        <div className="flex text-primary">
+                          <Star className="w-4 h-4 fill-current" />
+                          <Star className="w-4 h-4 fill-current" />
+                          <Star className="w-4 h-4 fill-current" />
+                          <Star className="w-4 h-4 fill-current" />
+                          <Star className="w-4 h-4 fill-current" />
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-gray-600">
+                      "Made my daughter's sweet 16 absolutely perfect! The menu was creative and the staff was so friendly."
+                    </p>
+                  </Card>
+                  <Card className="p-6">
+                    <div className="flex items-center gap-4 mb-4">
+                      <User className="w-10 h-10 text-primary" />
+                      <div>
+                        <h4 className="font-semibold">Robert Chen</h4>
+                        <div className="flex text-primary">
+                          <Star className="w-4 h-4 fill-current" />
+                          <Star className="w-4 h-4 fill-current" />
+                          <Star className="w-4 h-4 fill-current" />
+                          <Star className="w-4 h-4 fill-current" />
+                          <Star className="w-4 h-4 fill-current" />
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-gray-600">
+                      "Exceptional service for our family reunion. They handled everything with care and the food was delicious!"
+                    </p>
+                  </Card>
+                </div>
+              </TabsContent>
+            </Tabs>
           </div>
         </div>
       </section>
