@@ -1,6 +1,7 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
-import { Calendar, BookOpen, ChefHat, HelpCircle, Star, User } from "lucide-react";
+import { Calendar, BookOpen, ChefHat, HelpCircle, Star, User, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -75,6 +76,109 @@ const Index = () => {
                 Customize your menu to perfectly match your event's needs.
               </p>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Area Section */}
+      <section className="py-16 px-4">
+        <div className="container mx-auto">
+          <div className="text-center mb-12">
+            <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
+            <h2 className="text-3xl font-semibold mb-4">Our Service Areas</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              We provide exceptional catering services across these regions
+            </p>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Tabs defaultValue="primary" className="w-full">
+              <TabsList className="grid w-full grid-cols-3">
+                <TabsTrigger value="primary">Primary Areas</TabsTrigger>
+                <TabsTrigger value="secondary">Secondary Areas</TabsTrigger>
+                <TabsTrigger value="special">Special Arrangements</TabsTrigger>
+              </TabsList>
+              
+              <TabsContent value="primary" className="mt-8">
+                <Card className="p-6">
+                  <h3 className="text-xl font-semibold mb-4">Core Service Region</h3>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-600">
+                    <li className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4 text-primary" />
+                      Downtown Metro Area
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4 text-primary" />
+                      North County
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4 text-primary" />
+                      South Bay
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4 text-primary" />
+                      East Valley
+                    </li>
+                  </ul>
+                  <p className="mt-4 text-sm text-gray-500">
+                    No additional travel fees for these locations
+                  </p>
+                </Card>
+              </TabsContent>
+
+              <TabsContent value="secondary" className="mt-8">
+                <Card className="p-6">
+                  <h3 className="text-xl font-semibold mb-4">Extended Coverage</h3>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-600">
+                    <li className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4 text-primary" />
+                      West Coast Region
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4 text-primary" />
+                      Mountain Communities
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4 text-primary" />
+                      Coastal Areas
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4 text-primary" />
+                      Wine Country
+                    </li>
+                  </ul>
+                  <p className="mt-4 text-sm text-gray-500">
+                    Small travel fee may apply for these locations
+                  </p>
+                </Card>
+              </TabsContent>
+
+              <TabsContent value="special" className="mt-8">
+                <Card className="p-6">
+                  <h3 className="text-xl font-semibold mb-4">Custom Arrangements</h3>
+                  <p className="text-gray-600 mb-4">
+                    We're happy to discuss catering services for locations outside our regular service areas. Special arrangements can be made for:
+                  </p>
+                  <ul className="space-y-3 text-gray-600">
+                    <li className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4 text-primary" />
+                      Destination Weddings
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4 text-primary" />
+                      Corporate Retreats
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4 text-primary" />
+                      International Events
+                    </li>
+                  </ul>
+                  <Button className="mt-6" variant="outline" asChild>
+                    <Link to="/contact">Contact for Details</Link>
+                  </Button>
+                </Card>
+              </TabsContent>
+            </Tabs>
           </div>
         </div>
       </section>
