@@ -87,90 +87,90 @@ const Index = () => {
             <MapPin className="w-12 h-12 text-primary mx-auto mb-4" />
             <h2 className="text-3xl font-semibold mb-4">Our Service Areas</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              We provide exceptional catering services across these regions
+              We provide exceptional catering services across major Indian cities and regions
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto">
             <Tabs defaultValue="primary" className="w-full">
               <TabsList className="grid w-full grid-cols-3">
-                <TabsTrigger value="primary">Primary Areas</TabsTrigger>
-                <TabsTrigger value="secondary">Secondary Areas</TabsTrigger>
-                <TabsTrigger value="special">Special Arrangements</TabsTrigger>
+                <TabsTrigger value="primary">Metro Cities</TabsTrigger>
+                <TabsTrigger value="secondary">Regional Hubs</TabsTrigger>
+                <TabsTrigger value="special">Special Locations</TabsTrigger>
               </TabsList>
               
               <TabsContent value="primary" className="mt-8">
                 <Card className="p-6">
-                  <h3 className="text-xl font-semibold mb-4">Core Service Region</h3>
+                  <h3 className="text-xl font-semibold mb-4">Major Metropolitan Areas</h3>
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-600">
                     <li className="flex items-center gap-2">
                       <MapPin className="w-4 h-4 text-primary" />
-                      Downtown Metro Area
+                      Delhi NCR
                     </li>
                     <li className="flex items-center gap-2">
                       <MapPin className="w-4 h-4 text-primary" />
-                      North County
+                      Mumbai
                     </li>
                     <li className="flex items-center gap-2">
                       <MapPin className="w-4 h-4 text-primary" />
-                      South Bay
+                      Bangalore
                     </li>
                     <li className="flex items-center gap-2">
                       <MapPin className="w-4 h-4 text-primary" />
-                      East Valley
+                      Chennai
                     </li>
                   </ul>
                   <p className="mt-4 text-sm text-gray-500">
-                    No additional travel fees for these locations
+                    No additional travel charges within these cities
                   </p>
                 </Card>
               </TabsContent>
 
               <TabsContent value="secondary" className="mt-8">
                 <Card className="p-6">
-                  <h3 className="text-xl font-semibold mb-4">Extended Coverage</h3>
+                  <h3 className="text-xl font-semibold mb-4">Regional Coverage</h3>
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-600">
                     <li className="flex items-center gap-2">
                       <MapPin className="w-4 h-4 text-primary" />
-                      West Coast Region
+                      Pune
                     </li>
                     <li className="flex items-center gap-2">
                       <MapPin className="w-4 h-4 text-primary" />
-                      Mountain Communities
+                      Hyderabad
                     </li>
                     <li className="flex items-center gap-2">
                       <MapPin className="w-4 h-4 text-primary" />
-                      Coastal Areas
+                      Kolkata
                     </li>
                     <li className="flex items-center gap-2">
                       <MapPin className="w-4 h-4 text-primary" />
-                      Wine Country
+                      Ahmedabad
                     </li>
                   </ul>
                   <p className="mt-4 text-sm text-gray-500">
-                    Small travel fee may apply for these locations
+                    Minimal travel charges may apply for these locations
                   </p>
                 </Card>
               </TabsContent>
 
               <TabsContent value="special" className="mt-8">
                 <Card className="p-6">
-                  <h3 className="text-xl font-semibold mb-4">Custom Arrangements</h3>
+                  <h3 className="text-xl font-semibold mb-4">Destination Events</h3>
                   <p className="text-gray-600 mb-4">
-                    We're happy to discuss catering services for locations outside our regular service areas. Special arrangements can be made for:
+                    We cater to special events at premium destinations across India:
                   </p>
                   <ul className="space-y-3 text-gray-600">
                     <li className="flex items-center gap-2">
                       <MapPin className="w-4 h-4 text-primary" />
-                      Destination Weddings
+                      Rajasthan Palace Weddings
                     </li>
                     <li className="flex items-center gap-2">
                       <MapPin className="w-4 h-4 text-primary" />
-                      Corporate Retreats
+                      Goa Beach Celebrations
                     </li>
                     <li className="flex items-center gap-2">
                       <MapPin className="w-4 h-4 text-primary" />
-                      International Events
+                      Kerala Backwater Events
                     </li>
                   </ul>
                   <Button className="mt-6" variant="outline" asChild>
@@ -208,7 +208,7 @@ const Index = () => {
                     <div className="flex items-center gap-4 mb-4">
                       <User className="w-10 h-10 text-primary" />
                       <div>
-                        <h4 className="font-semibold">Sarah & Michael</h4>
+                        <h4 className="font-semibold">Priya & Arjun Sharma</h4>
                         <div className="flex text-primary">
                           <Star className="w-4 h-4 fill-current" />
                           <Star className="w-4 h-4 fill-current" />
@@ -219,14 +219,14 @@ const Index = () => {
                       </div>
                     </div>
                     <p className="text-gray-600">
-                      "The team went above and beyond for our wedding. The food was exceptional and the service impeccable. Our guests are still talking about it!"
+                      "They perfectly executed our grand Indian wedding with a blend of traditional and modern cuisine. The live stations were a huge hit!"
                     </p>
                   </Card>
                   <Card className="p-6">
                     <div className="flex items-center gap-4 mb-4">
                       <User className="w-10 h-10 text-primary" />
                       <div>
-                        <h4 className="font-semibold">Emily & James</h4>
+                        <h4 className="font-semibold">Aditya & Meera Patel</h4>
                         <div className="flex text-primary">
                           <Star className="w-4 h-4 fill-current" />
                           <Star className="w-4 h-4 fill-current" />
@@ -237,7 +237,7 @@ const Index = () => {
                       </div>
                     </div>
                     <p className="text-gray-600">
-                      "Perfect execution from start to finish. They took care of everything, allowing us to truly enjoy our special day."
+                      "From mehendi to reception, every function was catered perfectly. The food presentation and taste were exceptional!"
                     </p>
                   </Card>
                 </div>
@@ -249,8 +249,8 @@ const Index = () => {
                     <div className="flex items-center gap-4 mb-4">
                       <User className="w-10 h-10 text-primary" />
                       <div>
-                        <h4 className="font-semibold">John Smith</h4>
-                        <p className="text-sm text-gray-500">Tech Solutions Inc.</p>
+                        <h4 className="font-semibold">Rajesh Mehta</h4>
+                        <p className="text-sm text-gray-500">TechServe India Ltd.</p>
                         <div className="flex text-primary">
                           <Star className="w-4 h-4 fill-current" />
                           <Star className="w-4 h-4 fill-current" />
@@ -261,15 +261,15 @@ const Index = () => {
                       </div>
                     </div>
                     <p className="text-gray-600">
-                      "Professional service for our annual conference. The variety of options and attention to dietary requirements was impressive."
+                      "Excellent service for our company's annual Diwali celebration. The variety of regional cuisines impressed all our employees."
                     </p>
                   </Card>
                   <Card className="p-6">
                     <div className="flex items-center gap-4 mb-4">
                       <User className="w-10 h-10 text-primary" />
                       <div>
-                        <h4 className="font-semibold">Lisa Johnson</h4>
-                        <p className="text-sm text-gray-500">Marketing Director</p>
+                        <h4 className="font-semibold">Anita Desai</h4>
+                        <p className="text-sm text-gray-500">Marketing Head, GlobalTech</p>
                         <div className="flex text-primary">
                           <Star className="w-4 h-4 fill-current" />
                           <Star className="w-4 h-4 fill-current" />
@@ -280,7 +280,7 @@ const Index = () => {
                       </div>
                     </div>
                     <p className="text-gray-600">
-                      "Consistently excellent service for our quarterly events. The team is always professional and the food presentation is outstanding."
+                      "Their corporate lunch packages are fantastic. Great mix of healthy and delicious options that cater to all dietary preferences."
                     </p>
                   </Card>
                 </div>
@@ -292,7 +292,7 @@ const Index = () => {
                     <div className="flex items-center gap-4 mb-4">
                       <User className="w-10 h-10 text-primary" />
                       <div>
-                        <h4 className="font-semibold">Amanda Peters</h4>
+                        <h4 className="font-semibold">Kavita Singhania</h4>
                         <div className="flex text-primary">
                           <Star className="w-4 h-4 fill-current" />
                           <Star className="w-4 h-4 fill-current" />
@@ -303,14 +303,14 @@ const Index = () => {
                       </div>
                     </div>
                     <p className="text-gray-600">
-                      "Made my daughter's sweet 16 absolutely perfect! The menu was creative and the staff was so friendly."
+                      "Made my son's thread ceremony truly special. The traditional South Indian breakfast spread was outstanding!"
                     </p>
                   </Card>
                   <Card className="p-6">
                     <div className="flex items-center gap-4 mb-4">
                       <User className="w-10 h-10 text-primary" />
                       <div>
-                        <h4 className="font-semibold">Robert Chen</h4>
+                        <h4 className="font-semibold">Rahul Khanna</h4>
                         <div className="flex text-primary">
                           <Star className="w-4 h-4 fill-current" />
                           <Star className="w-4 h-4 fill-current" />
@@ -321,7 +321,7 @@ const Index = () => {
                       </div>
                     </div>
                     <p className="text-gray-600">
-                      "Exceptional service for our family reunion. They handled everything with care and the food was delicious!"
+                      "Perfect arrangements for our house warming ceremony. The live chaat counter was the highlight of the evening!"
                     </p>
                   </Card>
                 </div>
